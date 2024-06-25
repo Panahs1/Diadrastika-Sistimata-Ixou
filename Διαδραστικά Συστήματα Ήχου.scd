@@ -3,7 +3,7 @@ s.waitForBoot {
         |out=0, dur=0.4, amp=0.8, pan=0|
         var env = EnvGen.kr(Env.perc(0.01, dur), doneAction: 2);
         var sig = SinOsc.ar(50, 0, amp) * env;
-        sig = sig + CombN.ar(sig, 0.2, 0.2, 2) * 0.3; // Προσθήκη reverb
+        sig = sig + CombN.ar(sig, 0.2, 0.2, 2) * 0.3;
         Out.ar(out, Pan2.ar(sig, pan));
     }).add;
 
